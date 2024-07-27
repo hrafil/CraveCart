@@ -32,3 +32,7 @@ Application was written using:
 - BaseUrl for San Francisco food trucks API can be changed in appsettings.json
 - Application logs to console - inspect console logs in case of unexpected application errors
 - Internet connection is required to load food trucks data - otherwise application will not start due to the initialization error
+
+## Looks
+
+![screenshot](docs/media/screenshot.png)
