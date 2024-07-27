@@ -69,6 +69,20 @@ namespace CraveCart.Infrastructure.FoodTruckProvider.SanFranciscoGovApi
                     }
                     foodTruck.Applicant = permit.Applicant;
 
+                    // Process FacilityType
+                    if (string.IsNullOrEmpty(permit.FacilityType))
+                    {
+                        throw new ArgumentException($"{permit.FacilityType} is null or empty");
+                    }
+                    foodTruck.SetFacilityType(permit.FacilityType!);
+
+                    // Process LicenseStatus
+                    if (string.IsNullOrEmpty(permit.Status))
+                    {
+                        throw new ArgumentException($"{permit.Status} is null or empty");
+                    }
+                    foodTruck.SetLicenseStatus(permit.Status!);
+
                     results.Add(foodTruck);
                 }
                 catch (Exception ex)

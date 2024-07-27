@@ -1,4 +1,6 @@
-﻿namespace CraveCart.Application.Dto
+﻿using CraveCart.Domain.Entities;
+
+namespace CraveCart.Application.Dto
 {
     public class FoodTruckSearchParameters
     {
@@ -9,5 +11,9 @@
         public string? PrefferedFood { get; set; }
 
         public int MaxCountOfTrucks { get; set; }
+
+        public FoodTruckFacilityType? FacilityType { get; set; }
+
+        public FoodTruckLicenseStatus? LicenseStatus { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace CraveCart.Application.Services
 
         public async Task<List<FoodTruckSearchResultItem>> SearchFoodTrucksAsync(FoodTruckSearchParameters searchParameters)
         {
-            var foodTrucks = await _foodTrucksRepository.GetFoodTrucksAsync();
+            var foodTrucks = await _foodTrucksRepository.GetFoodTrucksAsync(new Domain.Specifications.FoodTruckFilter(FoodTruckLicenseStatus.Approved, FoodTruckFacilityType.Truck));
 
             // TODO: Consider more efficient full text search
             var trucksByFood = foodTrucks.Where(x => x.FoodItems?.Contains(searchParameters.PrefferedFood!, StringComparison.InvariantCultureIgnoreCase) == true).ToList();

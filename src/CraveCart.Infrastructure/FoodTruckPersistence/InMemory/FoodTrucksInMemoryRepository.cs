@@ -1,5 +1,6 @@
 ﻿using CraveCart.Domain.Abstractions;
 using CraveCart.Domain.Entities;
+using CraveCart.Domain.Specifications;
 using System.Collections.Concurrent;
 
 namespace CraveCart.Infrastructure.FoodTruckPersistence.InMemory
@@ -19,9 +20,9 @@ namespace CraveCart.Infrastructure.FoodTruckPersistence.InMemory
             return Task.CompletedTask;
         }
 
-        public Task<List<FoodTruck>> GetFoodTrucksAsync()
+        public Task<List<FoodTruck>> GetFoodTrucksAsync(FoodTruckFilter filter)
         {
-            return Task.FromResult(FoodTrucks.ToList());
+            return Task.FromResult(FoodTrucks.Where(filter.IsSatisfied).ToList());
         }
     }
 }
