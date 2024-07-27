@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CraveCart.Web", "src\CraveCart.Web\CraveCart.Web.csproj", "{E9D6BCCF-3AFB-4A10-A8AC-E1A6DA7C3BDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CraveCart.Application", "src\CraveCart.Application\CraveCart.Application.csproj", "{6ED59F26-56B0-4600-B979-1D887D34A472}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CraveCart.Domain", "src\CraveCart.Domain\CraveCart.Domain.csproj", "{5311E0C7-D16C-4C6A-A8E3-93D028EF4525}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CraveCart.Infrastructure", "src\CraveCart.Infrastructure\CraveCart.Infrastructure.csproj", "{96944FCC-FD60-4AD5-82F0-9681B843AA81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{3954EF41-07FF-4F90-9806-D1E28F2913F2}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9D6BCCF-3AFB-4A10-A8AC-E1A6DA7C3BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D6BCCF-3AFB-4A10-A8AC-E1A6DA7C3BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D6BCCF-3AFB-4A10-A8AC-E1A6DA7C3BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D6BCCF-3AFB-4A10-A8AC-E1A6DA7C3BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ED59F26-56B0-4600-B979-1D887D34A472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED59F26-56B0-4600-B979-1D887D34A472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED59F26-56B0-4600-B979-1D887D34A472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED59F26-56B0-4600-B979-1D887D34A472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5311E0C7-D16C-4C6A-A8E3-93D028EF4525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5311E0C7-D16C-4C6A-A8E3-93D028EF4525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5311E0C7-D16C-4C6A-A8E3-93D028EF4525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5311E0C7-D16C-4C6A-A8E3-93D028EF4525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96944FCC-FD60-4AD5-82F0-9681B843AA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96944FCC-FD60-4AD5-82F0-9681B843AA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96944FCC-FD60-4AD5-82F0-9681B843AA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96944FCC-FD60-4AD5-82F0-9681B843AA81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF65854F-2565-487D-A656-AED82EA4FC32}
+	EndGlobalSection
+EndGlobal

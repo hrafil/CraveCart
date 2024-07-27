@@ -1,0 +1,33 @@
+﻿@page "/"
+@using CraveCart.Application.Dto
+@using CraveCart.Application.Services
+@using CraveCart.Domain.Entities
+@using CraveCart.Web.Components.FoodTrucks;
+@using static CraveCart.Web.Components.FoodTrucks.FoodTruckSearchForm;
+
+<PageTitle>Food truck search</PageTitle>
+
+<h1>Food truck search</h1>
+
+<FoodTruckSearchForm ModelChanged="OnSearchQueryChangedAsync"></FoodTruckSearchForm>
+<br />
+<FoodTruckResults Results="SearchResults"></FoodTruckResults>
+
+@code {
+    [Inject]
+    protected IFoodTruckSearchService FoodTruckSearchService { get; set; } = default!;
+
+    private List<FoodTruckSearchResultItem>? SearchResults { get; set; } = default!;
+
+    public async Task OnSearchQueryChangedAsync(FoodTruckSearchQuery foodTruckSearchQuery)
+    {
+        var parameters = new FoodTruckSearchParameters()
+        {
+            Latitude = foodTruckSearchQuery.Latitude!.Value,
+            Longitude = foodTruckSearchQuery.Longitude!.Value,
+            MaxCountOfTrucks = foodTruckSearchQuery.MaxResults!.Value,
+            PrefferedFood = foodTruckSearchQuery.PreferredFood!
+        };
+        SearchResults = await FoodTruckSearchService.SearchFoodTrucksAsync(parameters);
+    }
+}

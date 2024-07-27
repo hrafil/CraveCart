@@ -1,0 +1,70 @@
+﻿@using System.ComponentModel.DataAnnotations
+@inject ILogger<FoodTruckSearchForm> Logger
+
+<EditForm Model="Model" OnValidSubmit="SubmitAsync" FormName="FoodTruchSearchForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="row mb-3">
+        <label for="latitudeControlInput" class="col-sm-2 col-form-label">Latitude</label>
+        <div class="col-sm-10">
+            <InputNumber class="form-control" id="latitudeControlInput" placeholder="37" @bind-Value="Model!.Latitude" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="longtitudeControlInput" class="col-sm-2 col-form-label">Longitude</label>
+        <div class="col-sm-10">
+            <InputNumber class="form-control" id="longtitudeControlInput" placeholder="-122" @bind-Value="Model!.Longitude" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="foodControlInput" class="col-sm-2 col-form-label">Preferred food</label>
+        <div class="col-sm-10">
+            <InputText class="form-control" id="foodControlInput" placeholder="Pizza" @bind-Value="Model!.PreferredFood" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="maxResultsControlInput" class="col-sm-2 col-form-label">Max results</label>
+        <div class="col-sm-10">
+            <InputNumber class="form-control" id="maxResultsControlInput" placeholder="50" @bind-Value="Model!.MaxResults" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</EditForm>
+
+@code {
+    [SupplyParameterFromForm]
+    public FoodTruckSearchQuery? Model { get; set; }
+
+    [Parameter] 
+    public EventCallback<FoodTruckSearchQuery> ModelChanged { get; set; }
+
+    protected override void OnInitialized() => Model ??= new();
+
+    private async Task SubmitAsync()
+    {
+        Logger.LogInformation("Latitude: {Latitude}, Longitude: {Longitude}, PreferredFood: {PreferedFood}", Model!.Latitude, Model!.Longitude, Model!.PreferredFood);
+        await ModelChanged.InvokeAsync(Model);
+    }
+
+    public class FoodTruckSearchQuery
+    {
+        [Required]
+        [Range(-90, 90, ErrorMessage = "Latitude can be from -90 to 90.")]
+        public double? Latitude { get; set; }
+
+        [Required]
+        [Range(-180, 180, ErrorMessage = "Longitude can be from -90 to 90.")]
+        public double? Longitude { get; set; }
+
+        [Required]
+        public string? PreferredFood { get; set; }
+
+        [Required]
+        [Range(1, 500, ErrorMessage = "Max results can be from 1 to 500.")]
+        public int? MaxResults { get; set; }
+    }
+}

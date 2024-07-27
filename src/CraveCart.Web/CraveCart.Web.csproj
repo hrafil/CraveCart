@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CraveCart.Application\CraveCart.Application.csproj" />
+    <ProjectReference Include="..\CraveCart.Infrastructure\CraveCart.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

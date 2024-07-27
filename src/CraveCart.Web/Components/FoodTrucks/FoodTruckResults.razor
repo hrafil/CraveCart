@@ -1,0 +1,47 @@
+﻿@using CraveCart.Application.Dto
+@using CraveCart.Domain.Entities
+<h1>Food truck search results</h1>
+
+@if (Results == null)
+{
+    <p><em>Search pending...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Address</th>
+                <th>Applicant</th>
+                <th>Food items</th>
+                <th>Latitude</th>
+                <th>Longtitude</th>
+                <th>Distance (km)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 0;
+            }
+            @foreach (var result in Results)
+            {
+                i++;
+                <tr>
+                    <td>@i</td>
+                    <td>@result.Address</td>
+                    <td>@result.Applicant</td>
+                    <td>@result.FoodItems</td>
+                    <td>@result.Latitude</td>
+                    <td>@result.Longitude</td>
+                    <td>@result.DistanceKm</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public List<FoodTruckSearchResultItem>? Results { get; set; }
+}
