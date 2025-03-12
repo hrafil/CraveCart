@@ -5,7 +5,7 @@ Standalone application which loads all san francisco food trucks upon startup.
 
 ## Projects
 
-Application is divided into multiple projects with clean architecture and DDD principles given into account.
+Application is divided into multiple projects with clean architecture principles given into account.
 As the application functionality is rather small and further division would be unnecessary, the libraries count is smaller than in enterprise sized projects.
 One of the main benefits of this architecture is that it is easy to extend and maintain. It is also easy to test as the business logic is separated from the infrastructure.
 All following project are .NET 8 projects, linked to each other. Main standalone applications are in bold.
